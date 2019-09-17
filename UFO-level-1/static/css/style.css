@@ -41,6 +41,7 @@ body {
 .navbar {
   padding: 5px;
   margin: 0;
+  border-bottom: 2px solid white;
 }
 
 /* This CSS styles the ufo icon in the navbar */
@@ -74,7 +75,7 @@ select {
 }
 
 #table-area th {
-  text-align: center;
+  text-align: left;
 }
 
 #table-area th:first-child,
@@ -223,3 +224,27 @@ select {
     opacity: 1;
   }
 }
+
+.is-hidden{
+	display: none;
+}
+
+aside {
+  position: fixed;
+  right: 0;
+  top: 10%;
+  width: 15em;
+  margin-top: -2.5em;
+  z-index: 1;
+  opacity: 0.8
+}
+
+th {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+
+
+

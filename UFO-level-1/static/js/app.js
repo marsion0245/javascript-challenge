@@ -1,34 +1,46 @@
 /*
 	Java Script challenge homework
-	To add rows to the existing table I choose to build a string containg HTML contructs and insert it into DOM with innerHTML() function. 
-	Reason is speed, this is, to my best knowledge the fastest way to add big quatity of elements into DOM.
+	Table construction with d3.js (insert rows, cells) uses common solution available on Internet.
 */
 
 "use strict";
 
 (function(){
-	// Data in data.js, put it into array of strings
-	const tblRows = data.map(re => `<tr><td>${re.datetime}</td><td>${re.city}</td><td>${re.state}</td><td>${re.country}</td><td>${re.shape}</td><td>${re.durationMinutes}</td><td>${re.comments}</td></tr>`);
-
-	// Insert rows into table tbody
-	d3.select("#ufo-table").select("tbody").html(tblRows.join(""));
-		
-	d3.select("#filter-btn").on("click", function(){
-		let filter = d3.select("#datetime").node().value;
-		filterDate(filter);
+	// This is IIFE
+	
+	// A bit of text formating
+	data.forEach( row  => { 
+		row.state = row.state.toUpperCase();
+		row.country = row.country.toUpperCase();
+		row.city = row.city.replace(/(^|\s|\()\w/g, c => c.toUpperCase());
 	});
 	
-	let filterDate = function(){
-		let tableRows = d3.select("#ufo-table").select("tbody").selectAll("tr").style('display','none');
-		console.log(tableRows);
-//		tableRows.forEach(row => {
-			
-//			console.log(row);
-//		})
-		let x = d3.select("#ufo-table").select("tbody").selectAll("tr").filter(function(d){console.log(d); return true;});
-	};
+	// Insert rows into table tbody
+	let rows = d3.select("#ufo-table").select("tbody").selectAll().data(data).enter().append("tr");
+
+	// Insert cells into rows
+    rows.selectAll().data(d => Object.values(d)).enter().append("td").text(d => d);
 	
+	// Filter event assignment
+	d3.select("#filter-btn").on("click", () => filterByDate());
+	d3.select("#datetime").on("keypress", () => {
+		if(d3.event.keyCode === 13){ // pressed Enter
+			d3.event.preventDefault();
+			d3.event.stopPropagation();
+		}
+		filterByDate();
+	});
+	
+	const filterByDate = () => {
+		// Get filter value
+		let filter = d3.select("#datetime").node().value;
+		if(! filter){
+			// no filter value, show all rows
+			return rows.classed("is-hidden", p => false); 
+		}
+		// search - use regular expression and allow any section of date to match searching string
+		let regex =  new RegExp(`.*${filter}.*`); 
+		rows.classed("is-hidden", p =>  p.datetime.search(regex));
+	};
 })();
 
-
-	

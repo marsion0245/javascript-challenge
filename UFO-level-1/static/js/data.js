@@ -1,7 +1,7 @@
 var data = [{
     datetime: "1/1/2010",
     city: "benton",
-    state: "arr",
+    state: "ar",
     country: "us",
     shape: "circle",
     durationMinutes: "5 mins.",
