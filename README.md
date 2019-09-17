@@ -22,7 +22,7 @@
 5) Table is not rebuilt after filter cleanup, display=none is used istead of removing values from DOM
 
 ### The code
-* Is encapsulated in [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+* Is encapsulated in <b>[IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)</b>
 * Is fairly compact, have fun!
 
 
