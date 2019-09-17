@@ -96,3 +96,13 @@
 	
 })();
 
+// functions in global namespace
+function openNav() {
+	let isOpened = d3.select("#mySidenav").classed("mySidenavMin");
+	d3.select("#mySidenav").classed("mySidenavMin", ! isOpened);
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
