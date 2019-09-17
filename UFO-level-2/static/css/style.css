@@ -93,13 +93,6 @@ select {
   animation-delay: 1.2s;
 }
 
-/* media queries which will only be activated at specific screen sizes */
-/* @media (max-width: 800px) { */
-  /* #table-area td { */
-    /* font-size: 1em; */
-  /* } */
-/* } */
-
 /* keyframe animations which will be used to animate the title */
 @keyframes title {
   from {
@@ -169,11 +162,3 @@ thead tr:nth-child(1) th{
 	position: -o-sticky;
 	position: sticky;
 }
-
-/* #f_country, #f_state{ */
-	/* color: black; */
-	/* width: 150px; */
-/* }	 */
-/* #li-state option{ */
-	/* width: 200px; */
-/* }	 */

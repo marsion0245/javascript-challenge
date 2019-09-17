@@ -10,6 +10,8 @@
 	
 	const ALL = "*";
 	
+	// -------------------------------------------------------------------------------------------------------------------------------------------------
+	// Create table from JSON
 	// A bit of text formating
 	data.forEach( row  => { 
 		row.state = row.state.toUpperCase();
@@ -23,6 +25,9 @@
 	// Insert cells into rows
     rows.selectAll().data(d => Object.values(d)).enter().append("td").text(d => d);
 	
+
+	// -------------------------------------------------------------------------------------------------------------------------------------------------
+	// Create filters
 	// Filter event assignment
 	const stringValues = ['datetime', 'city', 'shape'];
 

@@ -30,4 +30,5 @@
 * Is fairly compact, have fun!
 
 
-![UFO-level-1](UFO-level-1/documents/index.html.png)
+![UFO-level-1](UFO-level-1/documents/index1.html.png)
+![UFO-level-2](UFO-level-2/documents/index2.html.png)
