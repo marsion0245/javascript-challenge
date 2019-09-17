@@ -10,22 +10,15 @@ body {
   margin: 0;
 }
 
-/* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
-.wrapper {
-  position: relative;
-  min-height: 100%;
-  padding-bottom: 130px;
-  overflow: auto;
-}
-
 /* The footer is positioned at the bottom of the page */
 .footer {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  min-height: 50px;
+  min-height: 34px;
   background: #4e5d6c;
+  border-top: 2px solid white;
 }
 
 /* The code styles the text at the bottom of the footer */
@@ -66,30 +59,12 @@ body {
   margin-top: 10px;
 }
 
-select {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  color: #8e979f;
-  outline: none;
-}
-
-#table-area th {
-  text-align: left;
-}
-
-/* #table-area th:first-child, */
-/* #table-area th:nth-child(2), */
-/* #table-area th:nth-child(6) { */
-  /* min-width: 70px; */
-/* } */
-
-/* .loader { */
-  /* margin-top: 50px; */
-/* } */
-
-/* .margin-top-50 { */
-  /* margin-top: 50px; */
+/* select { */
+  /* display: block; */
+  /* width: 100%; */
+  /* padding: 8px; */
+  /* color: #8e979f; */
+  /* outline: none; */
 /* } */
 
 /* The styles for the parallax */
@@ -118,77 +93,10 @@ select {
   animation-delay: 1.2s;
 }
 
-/* input placeholder color changes */
-/* .form-control::-webkit-input-placeholder { */
-  /* /* Chrome/Opera/Safari */ */
-  /* color: #8e979f; */
-/* } */
-
-/* .form-control::-moz-placeholder { */
-  /* /* Firefox 19+ */ */
-  /* color: #8e979f; */
-/* } */
-
-/* .form-control:-ms-input-placeholder { */
-  /* /* IE 10+ */ */
-  /* color: #8e979f; */
-/* } */
-
-/* .form-control:-moz-placeholder { */
-  /* /* Firefox 18- */ */
-  /* color: #8e979f; */
-/* } */
-
 /* media queries which will only be activated at specific screen sizes */
-@media (max-width: 800px) {
-  #table-area td {
-    font-size: 1em;
-  }
-}
-
-/* @media (max-width: 500px) { */
-  /* #table-area thead { */
-    /* display: none; */
-  /* } */
-
-  /* #table-area tr td:first-child { */
-    /* font-size: 1.8em; */
-    /* font-weight: bold; */
-    /* background: #1b3146; */
-  /* } */
-
-  /* #table-area tr td:last-child { */
-    /* margin-bottom: 20px; */
-  /* } */
-
-  /* #table-area tr td:last-child::after { */
-    /* display: block; */
-    /* width: 100%; */
-    /* height: 1px; */
-    /* margin-top: 20px; */
-    /* content: " "; */
-    /* background: aliceblue; */
-  /* } */
-
+/* @media (max-width: 800px) { */
   /* #table-area td { */
-    /* font-size: 1.25em; */
-  /* } */
-
-  /* #table-area tbody td { */
-    /* display: block; */
-    /* text-align: center; */
-  /* } */
-
-  /* #table-area tbody td::before { */
-    /* display: block; */
-    /* font-size: 1.4em; */
-    /* font-weight: bold; */
-    /* text-align: center; */
-    /* content: attr(data-th); */
-  /* } */
-
-  /* .hero h1 { */
-    /* animation: smaller-title 1.2s forwards linear; */
+    /* font-size: 1em; */
   /* } */
 /* } */
 
@@ -225,7 +133,7 @@ select {
   }
 }
 
-.is-hidden{
+.f_datetime, .f_city, .f_shape {
 	display: none;
 }
 
@@ -235,19 +143,25 @@ aside {
   top: 10%;
   width: 15em;
   margin-top: -2.5em;
-  z-index: 1;
+  z-index: 2;
   opacity: 0.8
 }
 
-th {
-    position: sticky;
-    top: 40;
-  }
-
 #tbl-container{
-
-	min-height: 400px;
-	overflow-x: scroll;
-	
+	padding-top: 50px;
+	height: calc(100vh - 35px);
+	overflow-y: scroll;
 }
 
+thead tr:nth-child(1) th{
+	font-size: 1.5rem;
+    text-align: left;
+    background: #454545;
+    top: 0;
+    z-index: 1;
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: -ms-sticky;
+	position: -o-sticky;
+	position: sticky;
+}

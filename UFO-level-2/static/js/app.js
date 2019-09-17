@@ -22,25 +22,37 @@
     rows.selectAll().data(d => Object.values(d)).enter().append("td").text(d => d);
 	
 	// Filter event assignment
-	d3.select("#filter-btn").on("click", () => filterByDate());
-	d3.select("#datetime").on("keyup", () => filterByDate());
-	d3.select("#datetime").on("keypress", () => {
-		if(d3.event.keyCode === 13){ // pressed Enter
+	const stringValues = ['datetime', 'city', 'shape'];
+
+	// Activate string filters
+	stringValues.forEach(el => d3.select("#f_" + el).on("keyup", () => filterByString(el)).on("keypress", () => cancelEvent()));
+
+	// Execute filter - this is formality since the filters are executed on each button up
+	d3.select("#filter-btn").on("click", () => stringValues.forEach(el => filterByString(el)));
+	
+	// Cancel filter
+	d3.select("#cancel-btn").on("click", () => {
+		stringValues.forEach(el =>{
+			d3.select("#f_" + el).node().value = ""; 
+			filterByString(el);
+		});
+	});
+	
+	const cancelEvent = () => {
+		if(d3.event.keyCode === 13){ 
+			// pressed Enter
 			d3.event.preventDefault();
 			d3.event.stopPropagation();
 		}
-	});
+	};	
 	
-	const filterByDate = () => {
+	// Date filter
+	const filterByString = (attrName) => {
 		// Get filter value
-		let filter = d3.select("#datetime").node().value;
-		if(! filter){
-			// no filter value, show all rows
-			return rows.classed("is-hidden", p => false); 
-		}
-		// Use regular expression for filtering and allow any section of date to match searching string
-		let regex =  new RegExp(`.*${filter}.*`); 
-		rows.classed("is-hidden", p =>  p.datetime.search(regex));
+		let filter = d3.select(`#f_${attrName}`).node().value;
+		// let regex = new RegExp(".*" + filter + ".*");
+		(Boolean(filter)) ? rows.classed(`f_${attrName}`, p => p[attrName].search(new RegExp(".*" + filter + ".*"))) : rows.classed(`f_${attrName}`, p => false);
 	};
+
 })();
 
