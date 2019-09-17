@@ -20,15 +20,17 @@
 	- searches for a subtring in the corresponding field
 	- search is case sensitive
 	- user can enter regular expression
-3) Values are combined with AND
-4) Clearing of the filter removes all values and shows all rows
-5) Table is not rebuilt after filter cleanup, display=none is used istead of removing values from DOM
+3) Country and State dropdown are cascaded, change in Country automatically reloads States
+4) Values are combined with AND
+5) Clearing of the filter removes all values and shows all rows
+6) Table is not rebuilt after filter cleanup, display=none is used istead of removing values from DOM
 
 ### The code
 * Is located in ~/static/app.js files
 * Uses encapsulation, see <b>[IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)</b>
-* Is fairly compact, have fun!
 
-
+#### UFO-level-1
 ![UFO-level-1](UFO-level-1/documents/index1.html.png)
+
+#### UFO-level-2
 ![UFO-level-2](UFO-level-2/documents/index2.html.png)
