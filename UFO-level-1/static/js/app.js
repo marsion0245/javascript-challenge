@@ -23,12 +23,12 @@
 	
 	// Filter event assignment
 	d3.select("#filter-btn").on("click", () => filterByDate());
+	d3.select("#datetime").on("keyup", () => filterByDate());
 	d3.select("#datetime").on("keypress", () => {
 		if(d3.event.keyCode === 13){ // pressed Enter
 			d3.event.preventDefault();
 			d3.event.stopPropagation();
 		}
-		filterByDate();
 	});
 	
 	const filterByDate = () => {
@@ -38,7 +38,7 @@
 			// no filter value, show all rows
 			return rows.classed("is-hidden", p => false); 
 		}
-		// search - use regular expression and allow any section of date to match searching string
+		// Use regular expression for filtering and allow any section of date to match searching string
 		let regex =  new RegExp(`.*${filter}.*`); 
 		rows.classed("is-hidden", p =>  p.datetime.search(regex));
 	};
