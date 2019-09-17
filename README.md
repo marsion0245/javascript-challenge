@@ -21,6 +21,7 @@
 	- searches for a subtring in the corresponding field
 	- search is case sensitive
 	- user can enter regular expression
+	- :information_source: treating datatime as string provides more option for searching
 4) Country and State dropdown are cascaded, change in Country automatically reloads States
 5) Values are combined with AND
 6) Clearing of the filter removes all values and shows all rows
