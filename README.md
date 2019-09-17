@@ -5,7 +5,6 @@
 * UFO-level-1 solution provided
 * UFO-level-2 solution provided
  
-* Programs are located in static/app.js file
  
 ### Page Layout has been improved:
 1) Page shows the original picture (I like it)
@@ -22,7 +21,8 @@
 5) Table is not rebuilt after filter cleanup, display=none is used istead of removing values from DOM
 
 ### The code
-* Is encapsulated in <b>[IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)</b>
+* Is located in ~/static/app.js files
+* Uses encapsulation, see <b>[IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)</b>
 * Is fairly compact, have fun!
 
 
