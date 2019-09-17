@@ -30,6 +30,10 @@
 6) Clearing of the filter removes all values and shows all rows
 7) Table is not rebuilt after filter cleanup, display=none is used istead of removing values from DOM
 
+:exclamation: After the cascaded dropdowns were added it became obvious that a framework with MVVM
+observalble (like Knockout) would be better option.
+
+
 ### The code
 * Is located in ~/static/app.js files
 * Uses encapsulation, see <b>[IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)</b>
