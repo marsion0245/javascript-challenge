@@ -36,4 +36,7 @@
 ![UFO-level-1](UFO-level-1/documents/index1.html.png)
 
 #### UFO-level-2 Page
+
+* Notice filter menu on top right side of navbar; menu is hidden by default
+
 ![UFO-level-2](UFO-level-2/documents/index2.html.png)
