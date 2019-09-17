@@ -21,5 +21,8 @@
 4) Clearing of the filter removes all values and shows all rows
 5) Table is not rebuilt after filter cleanup, display=none is used istead of removing values from DOM
 
-The code is fairly condensed, have fun!
+### The code
+* Is encapsulated in [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+* Is fairly compact, have fun!
+
 
