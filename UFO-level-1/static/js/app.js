@@ -23,24 +23,26 @@
 	
 	// Filter event assignment
 	d3.select("#filter-btn").on("click", () => filterByDate());
-	d3.select("#datetime").on("keyup", () => filterByDate());
-	d3.select("#datetime").on("keypress", () => {
+	d3.select("#cancel-btn").on("click", () => {d3.select("#datetime").node().value = ""; filterByDate();});
+	d3.select("#datetime").on("keyup", () => filterByDate()).on("keypress", () => {
 		if(d3.event.keyCode === 13){ // pressed Enter
 			d3.event.preventDefault();
 			d3.event.stopPropagation();
 		}
 	});
 	
+	// Date filter
 	const filterByDate = () => {
 		// Get filter value
 		let filter = d3.select("#datetime").node().value;
-		if(! filter){
-			// no filter value, show all rows
-			return rows.classed("is-hidden", p => false); 
+
+		if(Boolean(filter)){
+			// Use Regex for filtering
+			rows.classed("is-hidden", p => p.datetime.search(new RegExp(`.*${filter}.*`))); 	
+		}else{		
+			// No filter value, show all rows
+			rows.classed("is-hidden", p => false);
 		}
-		// Use regular expression for filtering and allow any section of date to match searching string
-		let regex =  new RegExp(`.*${filter}.*`); 
-		rows.classed("is-hidden", p =>  p.datetime.search(regex));
 	};
 })();
 
