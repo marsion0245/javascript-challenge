@@ -14,8 +14,11 @@
 6) Input text capitalization is updated during table buildup
 
 ### Filter functionality:
-1) Filer side menu is opened by click on Filter om the the right top corned of the page; 
-    menu is hidden by second click on the same menu; open / close is available only in UFO-level-2 
+1) Filter side menu:
+	- is opened by click on the Filter at the right top corned of the page
+    - menu is closed by second click on Filter
+	- it is available only in UFO-level-2 
+	- :warning: it closed by default
 2) Is activated with either keyup, or by click on Filter button (this is redundant)
 3) Uses regex for string values (datetime, city, shape):
 	- searches for a subtring in the corresponding field
