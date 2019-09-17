@@ -29,8 +29,10 @@
 * Is located in ~/static/app.js files
 * Uses encapsulation, see <b>[IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)</b>
 
-#### UFO-level-1
+## Results
+
+#### UFO-level-1 Page
 ![UFO-level-1](UFO-level-1/documents/index1.html.png)
 
-#### UFO-level-2
+#### UFO-level-2 Page
 ![UFO-level-2](UFO-level-2/documents/index2.html.png)
