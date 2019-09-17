@@ -59,13 +59,13 @@ body {
   margin-top: 10px;
 }
 
-/* select { */
-  /* display: block; */
-  /* width: 100%; */
-  /* padding: 8px; */
-  /* color: #8e979f; */
-  /* outline: none; */
-/* } */
+select {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  color: black;
+  outline: none;
+}
 
 /* The styles for the parallax */
 .hero {
@@ -133,7 +133,11 @@ body {
   }
 }
 
-.f_datetime, .f_city, .f_shape {
+.f_datetime, 
+.f_city, 
+.f_shape, 
+.f_country, 
+.f_state {
 	display: none;
 }
 
@@ -165,3 +169,11 @@ thead tr:nth-child(1) th{
 	position: -o-sticky;
 	position: sticky;
 }
+
+/* #f_country, #f_state{ */
+	/* color: black; */
+	/* width: 150px; */
+/* }	 */
+/* #li-state option{ */
+	/* width: 200px; */
+/* }	 */
