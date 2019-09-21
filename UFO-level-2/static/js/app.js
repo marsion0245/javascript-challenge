@@ -25,7 +25,6 @@
 	// Insert cells into rows
     rows.selectAll().data(d => Object.values(d)).enter().append("td").text(d => d);
 	
-
 	// -------------------------------------------------------------------------------------------------------------------------------------------------
 	// Create filters
 	// Filter event assignment
@@ -46,7 +45,7 @@
 	
 	d3.select("#f_country").on("change", () => {
 		let filter = d3.select("#f_country").node().value;
-		filter !== ALL ? rows.classed('f_country', p => p.country !== filter) : resetFilter('f_country');
+		filter !== ALL ? rows.classed('f_country', p => p.country !== filter) : resetFilter('f_country'), resetFilter('f_state');
 
 		// update states list based on selected country
 		let statesList = [ALL];
@@ -76,6 +75,12 @@
 		resetFilter("f_country");
 		resetFilter("f_state");
 	});
+
+	// Top page menubar - show / hide filter
+	d3.select("#toggleSideMenuBtn").on("click", () => {
+		let filterHidden = d3.select("#mySidenav").style('display') === 'none';
+		d3.select("#mySidenav").style('display', filterHidden ? 'block' : 'none');
+	});
 		
 	const cancelEvent = () => {
 		if(d3.event.keyCode === 13){ 
@@ -89,20 +94,10 @@
 	const filterByRegex = (attrName) => {
 		// Get filter value
 		let filter = d3.select(`#f_${attrName}`).node().value;
-		(Boolean(filter)) ? rows.classed(`f_${attrName}`, p => p[attrName].search(new RegExp(".*" + filter + ".*"))) : resetFilter(`f_${attrName}`); // rows.classed(`f_${attrName}`, p => false);
+		(Boolean(filter)) ? rows.classed(`f_${attrName}`, p => p[attrName].search(new RegExp(".*" + filter + ".*"))) : resetFilter(`f_${attrName}`);
 	};
 	
 	const resetFilter = param => rows.classed(param, false);
 	
 })();
-
-// functions in global namespace
-function openNav() {
-	let isOpened = d3.select("#mySidenav").classed("mySidenavMin");
-	d3.select("#mySidenav").classed("mySidenavMin", ! isOpened);
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
 

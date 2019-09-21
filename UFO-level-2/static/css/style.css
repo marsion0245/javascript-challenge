@@ -19,6 +19,7 @@ body {
   min-height: 34px;
   background: #4e5d6c;
   border-top: 2px solid white;
+  z-index: 3;
 }
 
 /* The code styles the text at the bottom of the footer */
@@ -46,7 +47,7 @@ body {
   color: white;
 }
 
-/* Adding styles to the aside and filter form */
+/* Adding styles to the filter form */
 .ufo-form {
   margin-top: 50px;
 }
@@ -134,14 +135,15 @@ select {
 	display: none;
 }
 
-aside {
+#mySidenav {
   position: fixed;
   right: 0;
-  top: 10%;
+  top: 100px;
   width: 15em;
   margin-top: -2.5em;
   z-index: 2;
-  opacity: 0.8
+  opacity: 0.8;
+  display: none;
 }
 
 #tbl-container{
@@ -163,61 +165,9 @@ thead tr:nth-child(1) th{
 	position: sticky;
 }
 
-#openSideMenu{
+#toggleSideMenuBtn{
 	float: right;
 	font-size:30px;
 	cursor:pointer;
 }	
-
-.mySidenavMin{
-	width: 0;
-}	
-
-/** ----------------------------------- 
-
-Extra bonus - Side Nav from 
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav
-
------------------------------------ */
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-
 
